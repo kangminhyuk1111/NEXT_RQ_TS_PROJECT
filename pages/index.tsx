@@ -3,8 +3,10 @@ import { useQuery } from 'react-query';
 import axios from 'axios';
 import styled from 'styled-components';
 
-const styledButton = styled.Button`
-  margin
+const DivSetter = styled.div`
+  width: 33%;
+  margin: 0 auto;
+  background-color: red;
 `
 
 const Home: NextPage = () => {
@@ -21,12 +23,12 @@ const Home: NextPage = () => {
     return <h4>where is error</h4>
   }
   const currentMapData = data.map((res:any) => (
-    <div>
+    <DivSetter>
       <img src={`https://image.tmdb.org/t/p/w200/${res.poster_path}`}/>
       <p>{res.title}</p>
-      <p>{res.overview}</p>
       <p>{res.release_date}</p>
-    </div>
+      <p>{res.overview}</p>
+    </DivSetter>
   ))
   
   return (
